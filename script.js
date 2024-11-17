@@ -264,7 +264,7 @@ function registerUser(username, password) {
     users.push({ username, password });
     localStorage.setItem('users', JSON.stringify(users));
     alert("Usuário registrado com sucesso!");
-    window.location.href = 'login.html'; // Redireciona para a página de login
+    window.location.href = 'index.html'; // Redireciona para a página de login
 }
 
 // Função para realizar o login
@@ -286,6 +286,6 @@ function logout() {
     localStorage.removeItem('loggedInUser');
     
     // Redireciona para a página de login
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
