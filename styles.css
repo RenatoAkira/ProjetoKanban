@@ -1,0 +1,132 @@
+/* Botão de adicionar tarefa no canto superior direito */
+button.btn-primary {
+    position: fixed; /* Faz o botão se posicionar em relação à tela */
+    top: 20px; /* Distância da parte superior da tela */
+    right: 20px; /* Distância da parte direita da tela */
+    background-color: #8e24aa; /* Cor roxa */
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px; /* Espaçamento interno dentro do botão */
+    border-radius: 5px; /* Borda arredondada */
+    border: none; /* Sem bordas visíveis */
+    transition: background-color 0.3s ease; /* Transição suave */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    cursor: pointer; /* Adiciona o ponteiro de clique */
+    width: auto; /* Impede que o botão ocupe toda a largura */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pequena sombra para destaque */
+}
+
+button.btn-primary:hover {
+    background-color: #7b1fa2; /* Cor roxa mais escura no hover */
+}
+
+
+.task-card {
+    background-color: #fff;
+    border-radius: 8px; /* Borda arredondada */
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+.task-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-5px); /* Levanta a tarefa ao passar o mouse */
+}
+
+.task-card.high-priority {
+    border-left: 5px solid red;
+}
+
+.task-card.medium-priority {
+    border-left: 5px solid yellow;
+}
+
+.task-card.low-priority {
+    border-left: 5px solid green;
+}
+
+.task-card.near-due {
+    background-color: #fff3cd; /* Cor de fundo para tarefas com vencimento próximo */
+}
+
+.task-card.completed {
+    background-color: #d4edda; /* Cor de fundo para tarefas concluídas */
+}
+
+.task-card button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.task-card button:hover {
+    background-color: darkred;
+}
+
+.task-card button:active {
+    background-color: darkred;
+    transform: scale(0.95); /* Pequeno efeito de "clicar" no botão */
+}
+
+/* Estilo geral do modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Garante que o modal fique acima de outros elementos */
+}
+
+/* Modal visível */
+.modal.show {
+    display: flex; /* Exibe o modal */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px; /* Limita o tamanho máximo */
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botão de fechar no cabeçalho */
+.modal-header .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-header .btn-close:hover {
+    color: #ff0000;
+}
